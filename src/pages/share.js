@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeFB, makeTw } from '.';
+import { makeFB, makeTw } from '../utils/helper';
 import Layout from '../components/Layout';
 
 const sharePage = () => {
@@ -9,27 +9,41 @@ const sharePage = () => {
       <div id="snow"></div>
       <div className="boiler">
         <a href="/" className="boiler__title svg pointer">
-          <img alt="" className="boiler__desktop" src="/images/nav-logo.svg" />
+          <img alt="" className="boiler__desktop" src="/images/nav-logo.png" />
           <img
             alt=""
             className="boiler__mobile"
-            src="/images/logo-mobile.svg"
+            src="/images/logo-mobile.png"
           />
         </a>
 
         <div className="boiler__share">
           <span>Share</span>
-          <a className="iconButton pointer" onClick={() => {}}>
-            <img src="images/facebook.svg" />
-          </a>
-          <a className="iconButton pointer" onClick={() => {}}>
-            <img src="images/twitter.svg" />
-          </a>
+          <button
+            className="iconButton pointer"
+            onClick={() =>
+              makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+            }
+          >
+            <img src="images/facebook.svg" alt="" />
+          </button>
+          <button
+            className="iconButton pointer"
+            onClick={() =>
+              makeTw(
+                'Enjoy RAI Memes World',
+                'RAI Memes World',
+                'https://mstfash.github.io/rai-memes'
+              )
+            }
+          >
+            <img src="images/twitter.svg" alt="" />
+          </button>
         </div>
 
         <div className="boiler__options pointer">
           <span id="mute" className="boiler__mute">
-            <img src="images/music.svg" />
+            <img src="images/music.svg" alt="" />
           </span>
         </div>
       </div>
@@ -50,7 +64,9 @@ const sharePage = () => {
                 data-sa-stagger="share"
                 data-sa-stagger-speed="200"
                 id="share-title"
-              ></h2>
+              >
+                {' '}
+              </h2>
               <p
                 className="share__message fadeUp"
                 data-sa-stagger="share"
@@ -73,15 +89,15 @@ const sharePage = () => {
               <div className="share__bottomLeft">
                 <span className="">Share Meme!</span>
                 <div className="share__buttons">
-                  <a
+                  <button
                     className="iconButton iconButton--solid pointer"
                     onClick={() =>
                       makeFB('https://mstfash.github.io/rai-memes', 600, 400)
                     }
                   >
-                    <img src="images/facebook.svg" />
-                  </a>
-                  <a
+                    <img src="images/facebook.svg" alt="" />
+                  </button>
+                  <button
                     className="iconButton iconButton--solid pointer"
                     onClick={() =>
                       makeTw(
@@ -91,12 +107,12 @@ const sharePage = () => {
                       )
                     }
                   >
-                    <img src="images/twitter.svg" />
-                  </a>
+                    <img src="images/twitter.svg" alt="" />
+                  </button>
                 </div>
               </div>
               <div className="share__bottomRight">
-                <a href="/rai-memes" className="share__button button pointer">
+                <a href="/" className="share__button button pointer">
                   View Memes
                 </a>
               </div>

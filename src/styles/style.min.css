@@ -317,6 +317,9 @@ img {
   .boiler__credits {
     bottom: 80px;
   }
+  .boiler__title img {
+    margin: 0 auto;
+  }
 }
 .boiler__options {
   position: absolute;
@@ -683,6 +686,9 @@ img {
   }
 }
 .iconButton {
+  background: transparent;
+  border: none;
+  box-shadow: none;
   display: inline-block;
   width: 2rem;
   height: 2rem;
@@ -762,13 +768,13 @@ img {
 }
 @media screen and (max-width: 600px) {
   .iconButton--solid {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: 0.75rem;
     margin-left: 0.75rem;
   }
   .iconButton--solid img {
-    height: 1.2rem;
+    height: 0.8rem;
   }
   .iconButton--large {
     width: 3rem;
@@ -1020,11 +1026,12 @@ img {
 }
 @media screen and (max-width: 600px) {
   .grid__itemBack {
-    min-height: 40rem;
-    min-width: 28rem;
+    min-height: 40vh;
+    min-width: 250px;
+    width: 250px;
+    height: 300px;
     top: 53%;
-    height: 180%;
-    padding: 3rem 2.5rem;
+    padding: 1rem;
   }
 }
 .grid__itemClose {
@@ -1779,7 +1786,7 @@ img {
 }
 @media screen and (max-width: 600px) {
   .detail__label {
-    font-size: 1.3rem;
+    font-size: 10px;
   }
 }
 .detail__letterCount {
@@ -1824,7 +1831,7 @@ img {
 @media screen and (max-width: 600px) {
   .detail__input {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
     padding: 0.5rem 0.25rem;
   }
 }
@@ -1853,7 +1860,7 @@ img {
 }
 @media screen and (max-aspect-ratio: 80 / 100) and (max-width: 1050px) {
   .detail__subheading {
-    font-size: 1rem;
+    font-size: 10px;
     margin-bottom: 0.2rem;
   }
 }
@@ -1883,8 +1890,8 @@ img {
 }
 @media screen and (max-width: 600px) {
   .detail__button {
-    font-size: 12cpx;
-    padding: 1.25rem 2rem;
+    font-size: 8px;
+    padding: 1.25rem 1.25rem;
   }
 }
 .detail__bottomButtons {
@@ -1983,7 +1990,8 @@ img {
     left: -webkit-calc(50vw - 18.5rem);
     left: calc(50vw - 18.5rem);
     width: 37rem;
-    top: 46%;
+    top: 56%;
+    transform: translate3d(0, -30%, 0);
   }
 }
 .share__inner {
@@ -2275,11 +2283,10 @@ img {
 }
 @media screen and (max-aspect-ratio: 80 / 100) and (max-width: 1050px) {
   .open-share .share__cover {
-    -webkit-transform: scale(0.6) translateX(-83rem) translateY(-40rem)
-      rotate(-20deg);
-    -ms-transform: scale(0.6) translateX(-83rem) translateY(-40rem)
-      rotate(-20deg);
-    transform: scale(0.6) translateX(-83rem) translateY(-40rem) rotate(-20deg);
+    max-width: 250px;
+    max-height: 250px;
+    overflow: hidden;
+    transform: scale(0.6) translateX(-36rem) translateY(3rem) rotate(-20deg);
   }
 }
 .open-share .share__inner {
@@ -2339,6 +2346,12 @@ img {
   transform: translateY(4rem);
 }
 @media screen and (max-width: 600px) {
+  .share__buttons {
+    justify-content: center;
+  }
+  .detail__bottomRight {
+    padding: 0 0 0 0.3rem;
+  }
   .fadeUp {
     -webkit-transform: translateY(2rem);
     -ms-transform: translateY(2rem);
