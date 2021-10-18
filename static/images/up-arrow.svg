@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="6px" viewBox="0 0 11 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>up-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Working-File" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Detail-and-share" transform="translate(-1357.000000, -401.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="NAV" transform="translate(0.000000, 380.000000)">
+                <g id="Arrows" transform="translate(1338.000000, 0.000000)">
+                    <g id="Group-4">
+                        <path d="M22.1888208,24.4794737 L26.3209982,28.7894191 C26.5857204,29.0632674 27.0218165,29.0710361 27.2960995,28.8067898 C27.5703825,28.5425435 27.5794466,28.1059039 27.3163667,27.8304735 L23.6415505,24.0000009 L27.3163667,20.1695265 C27.5794466,19.8940961 27.5703825,19.4574565 27.2960995,19.1932102 C27.0218165,18.9289639 26.5857204,18.9367326 26.3209982,19.2105809 L22.1888208,23.5205263 C22.0612387,23.6553338 21.9933491,23.8359672 22.0005148,24.0215506 C22.0044992,24.1922711 22.0715974,24.3554405 22.1888208,24.4794737 Z" id="up-arrow" transform="translate(24.753947, 24.000000) rotate(90.000000) translate(-24.753947, -24.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

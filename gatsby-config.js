@@ -1,35 +1,35 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "rai-memes-world",
+    siteUrl: 'https://memes.reflexer.finance',
+    title: 'RAI Meme World',
   },
   plugins: [
     {
-      resolve: "gatsby-source-contentful",
+      resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: "PmwQPR9UbeeTjEph3N35bcJ7eh1bMhuIMhIda6CASfU",
-        spaceId: "",
+        accessToken: '5ybfwuxolTWMU-T4L0jSsLGAEjhVyPF3EU-koAOcotI',
+        spaceId: 'i9yewtly8bdr',
       },
     },
-    "gatsby-plugin-sass",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-sass',
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/icon.png",
+        icon: 'static/images/favicon/favicon-32x32.png',
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'static',
+        path: './static/',
       },
-      __key: "images",
+      __key: 'static',
     },
   ],
 };
