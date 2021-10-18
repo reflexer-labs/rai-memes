@@ -1,7 +1,11 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://memes.reflexer.finance',
-    title: 'RAI Meme World',
+    title: 'RAI Memes World',
   },
   plugins: [
     {
