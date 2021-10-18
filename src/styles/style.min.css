@@ -2142,7 +2142,7 @@ img {
 }
 .share__cover,
 .share__cover img {
-  height: 100%;
+  width: 100%;
 }
 @media screen and (max-aspect-ratio: 80 / 100) and (max-width: 1050px) {
   .share__cover,
@@ -2261,10 +2261,10 @@ img {
     -webkit-transform 1.44s 180ms cubic-bezier(0.27, 0.71, 0.285, 0.93);
 }
 .open-share .share__cover {
-  -webkit-transform: scale(0.8) translateX(-85rem) translateY(-10rem)
-    rotate(-5deg);
-  -ms-transform: scale(0.8) translateX(-85rem) translateY(-10rem) rotate(-5deg);
-  transform: scale(0.8) translateX(-85rem) translateY(-10rem) rotate(-5deg);
+  max-width: 250px;
+  -webkit-transform: translateX(-40rem) translateY(2rem) rotate(-5deg);
+  -ms-transform: translateX(-40rem) translateY(2rem) rotate(-5deg);
+  transform: translateX(-40rem) translateY(2rem) rotate(-5deg);
   -webkit-transition: -webkit-transform 0.9s
     cubic-bezier(0.57, 0.09, 0.105, 1.005);
   transition: -webkit-transform 0.9s cubic-bezier(0.57, 0.09, 0.105, 1.005);

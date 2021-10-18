@@ -9,8 +9,12 @@ const sharePage = () => {
       <div id="snow"></div>
       <div className="boiler">
         <a href="/" className="boiler__title svg pointer">
-          <img className="boiler__desktop" src="images/nav-logo.svg" />
-          <img className="boiler__mobile" src="images/logo-mobile.svg" />
+          <img alt="" className="boiler__desktop" src="/images/nav-logo.svg" />
+          <img
+            alt=""
+            className="boiler__mobile"
+            src="/images/logo-mobile.svg"
+          />
         </a>
 
         <div className="boiler__share">

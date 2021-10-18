@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   const returnData = () => {
     const memes = edges.map((e) => [
       e.node.memeFile.file.url,
-      e.node.memeFile.file.fileName,
+      e.node.memeFile.file.fileName.toLowerCase().split('_').join(''),
     ]);
     return JSON.stringify(memes);
   };
