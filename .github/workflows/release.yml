@@ -1,0 +1,38 @@
+name: Production Release
+on:
+  release:
+    types:
+      - published
+
+  # manual trigger
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 12.18.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.18.0"
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Building static site
+        run: yarn build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: public # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
