@@ -1616,7 +1616,7 @@ var scrollAnimations = {
     },
     create: function (e) {
       var t = shareController.getUid(e);
-      console.log(e);
+
       document
         .getElementById('share-image')
         .append(gridController.createImage(t[0])),
@@ -1629,7 +1629,6 @@ var scrollAnimations = {
     },
     getUid: function (t) {
       var r = null;
-      console.log(cardArray);
       return (
         cardArray.forEach(function (e) {
           t.u == e[1] && (r = e);
