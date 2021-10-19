@@ -37,12 +37,15 @@ const Layout = ({ children, search }) => {
 
   const generateImgUrl = () => {
     if (search) {
+      console.log('search', search);
       if (!state.hash || !state.dehash) {
         initHash();
       }
+      console.log('hash', state);
       const u = search.split('?')[1].split('&')[0];
       const hashedImg = u.split('=')[1];
       const decodedImg = decodeValue(hashedImg, state.dehash);
+      console.log('decodedImg', decodedImg);
       setogImage(
         getImg(decodedImg)
           ? 'https:' + getImg(decodedImg)[0] + '?w=200'

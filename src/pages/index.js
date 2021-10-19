@@ -3,10 +3,6 @@ import Layout from '../components/Layout';
 import { makeFB, makeTw, openURLInPopup } from '../utils/helper';
 
 const IndexPage = () => {
-  const handleFBSharer = () => {
-    const img = document.querySelector('.grid__item--selected');
-    console.log(img);
-  };
   return (
     <Layout>
       <nav />
