@@ -121,14 +121,26 @@ const Layout = ({ children, search }) => {
           sizes="16x16"
           href={`${BASE_URL}/images/favicon/favicon-16x16.png`}
         />
+        <link rel="image_src" href={imgUrl} />
         <meta
           name="description"
           content="RAI memes with sharing as card option"
         />
-        <meta property="title" content="RAI Meme World" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={BASE_URL} />
         <meta property="og:title" content="RAI Meme World" />
         <meta property="og:image" content={imgUrl} />
+        <meta property="og:image:secure_url" content={imgUrl} />
         <meta property="og:type" content="website" />
+
+        <meta property="twitter:card" content={imgUrl} />
+        <meta property="twitter:url" content={BASE_URL} />
+        <meta property="twitter:title" content="RAI Meme World" />
+        <meta
+          property="twitter:description"
+          content="RAI memes with sharing as card option"
+        />
+        <meta property="twitter:image" content={imgUrl} />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
           name="msapplication-TileImage"
