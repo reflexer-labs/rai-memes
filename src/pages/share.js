@@ -22,9 +22,7 @@ const SharePage = ({ location: { search } }) => {
           <button
             className="iconButton pointer"
             onClick={() =>
-              openURLInPopup(
-                makeFB('https://mstfash.github.io/rai-memes', 600, 400)
-              )
+              openURLInPopup(makeFB('https://memes.reflexer.finance', 600, 400))
             }
           >
             <img src="/images/facebook.svg" alt="" />
@@ -36,7 +34,7 @@ const SharePage = ({ location: { search } }) => {
                 makeTw(
                   'Enjoy RAI Memes World',
                   'RAI_Memes_World',
-                  'https://mstfash.github.io/rai-memes'
+                  'https://memes.reflexer.finance'
                 )
               )
             }
@@ -97,7 +95,7 @@ const SharePage = ({ location: { search } }) => {
                     className="iconButton iconButton--solid pointer"
                     onClick={() =>
                       openURLInPopup(
-                        makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+                        makeFB('https://memes.reflexer.finance', 600, 400)
                       )
                     }
                   >
@@ -110,7 +108,7 @@ const SharePage = ({ location: { search } }) => {
                         makeTw(
                           'Enjoy RAI Memes World',
                           'RAI_Memes_World',
-                          'https://mstfash.github.io/rai-memes'
+                          'https://memes.reflexer.finance'
                         )
                       )
                     }

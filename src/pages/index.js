@@ -18,9 +18,7 @@ const IndexPage = () => {
           <button
             className="iconButton pointer"
             onClick={() =>
-              openURLInPopup(
-                makeFB('https://mstfash.github.io/rai-memes', 600, 400)
-              )
+              openURLInPopup(makeFB('https://memes.reflexer.finance', 600, 400))
             }
           >
             <img alt="" src="images/facebook.svg" />
@@ -32,7 +30,7 @@ const IndexPage = () => {
                 makeTw(
                   'Enjoy RAI Memes World',
                   'RAI_Memes_World',
-                  'https://mstfash.github.io/rai-memes'
+                  'https://memes.reflexer.finance'
                 )
               )
             }
