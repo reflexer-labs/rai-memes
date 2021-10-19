@@ -1655,7 +1655,7 @@ var scrollAnimations = {
         case 'twitter':
           // event('share-share', 'twitter', 'click', !0),
           openURLInPopup(
-            (r = makeTw('Enjoy RAI Memes World!', 'RAI Memes World', t)),
+            (r = makeTw('Enjoy RAI Memes World!', 'RAI_Memes_World', t)),
             600,
             400
           );
