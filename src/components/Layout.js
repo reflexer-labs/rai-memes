@@ -17,6 +17,7 @@ const Layout = ({ children, search }) => {
     }
     return { hash, dehash };
   };
+  console.log(initHash());
 
   const memesArray = edges.map((e) => [
     e.node.memeFile.file.url,
@@ -32,7 +33,7 @@ const Layout = ({ children, search }) => {
     return memesArray.find((a) => a[1] === decodedImg);
   };
 
-  const imgUrl = useMemo(() => {
+  const imgUrl = React.useMemo(() => {
     console.log('search', search);
     if (search) {
       const { dehash } = initHash();
@@ -46,7 +47,7 @@ const Layout = ({ children, search }) => {
         : `${BASE_URL}/images/favicon/apple-icon-144x144.png`;
     }
     return `${BASE_URL}/images/favicon/apple-icon-144x144.png`;
-  }, [search]);
+  }, [search, getImg]);
 
   return (
     <>

@@ -189,10 +189,7 @@ const IndexPage = () => {
         <div className="detail__bottom fadeUp" data-sa-stagger="detail">
           <span className="detail__subheading">Share this meme!</span>
           <div className="detail__buttons">
-            <span
-              className="iconButton iconButton--solid pointer facebookButton"
-              onClick={() => handleFBSharer()}
-            >
+            <span className="iconButton iconButton--solid pointer facebookButton">
               <img alt="" src="images/facebook.svg" />
             </span>
             <span className="iconButton iconButton--solid pointer twitterButton">
