@@ -36,14 +36,16 @@ const Layout = ({ children, search }) => {
       const hashedImg = u.split('=')[1];
       const decodedImg = decodeValue(hashedImg, state.dehash);
       return getImg(decodedImg)
-        ? getImg(decodedImg)[0] + '?w=200'
+        ? 'https:' + getImg(decodedImg)[0] + '?w=200'
         : 'images/favicon/apple-icon-144x144.png';
     }
+    return 'images/favicon/apple-icon-144x144.png';
   };
 
   React.useEffect(() => {
     initHash();
   }, []);
+
   return (
     <>
       <Helmet>
@@ -123,6 +125,7 @@ const Layout = ({ children, search }) => {
         <meta property="title" content="RAI Meme World" />
         <meta property="og:title" content="RAI Meme World" />
         <meta property="og:image" content={generateImgUrl()} />
+        <meta property="og:image:width" content="200" />
         <meta property="og:type" content="website" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta

@@ -2270,6 +2270,8 @@ img {
 }
 .open-share .share__cover {
   max-width: 250px;
+  max-height: 250px;
+  overflow: hidden;
   -webkit-transform: translateX(-40rem) translateY(2rem) rotate(-5deg);
   -ms-transform: translateX(-40rem) translateY(2rem) rotate(-5deg);
   transform: translateX(-40rem) translateY(2rem) rotate(-5deg);

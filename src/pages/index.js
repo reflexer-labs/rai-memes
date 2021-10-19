@@ -3,6 +3,10 @@ import Layout from '../components/Layout';
 import { makeFB, makeTw, openURLInPopup } from '../utils/helper';
 
 const IndexPage = () => {
+  const handleFBSharer = () => {
+    const img = document.querySelector('.grid__item--selected');
+    console.log(img);
+  };
   return (
     <Layout>
       <nav />
@@ -189,7 +193,10 @@ const IndexPage = () => {
         <div className="detail__bottom fadeUp" data-sa-stagger="detail">
           <span className="detail__subheading">Share this meme!</span>
           <div className="detail__buttons">
-            <span className="iconButton iconButton--solid pointer facebookButton">
+            <span
+              className="iconButton iconButton--solid pointer facebookButton"
+              onClick={() => handleFBSharer()}
+            >
               <img alt="" src="images/facebook.svg" />
             </span>
             <span className="iconButton iconButton--solid pointer twitterButton">
