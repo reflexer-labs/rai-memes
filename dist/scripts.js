@@ -1799,11 +1799,9 @@ function amperoctoplus(e) {
   )).replace(/\+/g, '%2B')).replace(/@/g, '%40')).replace(/:/g, '%3A'));
 }
 function makeFB(e) {
-  const data = shareController.getData(e);
-  const img = shareController.getUid(data);
   return (
     'https://www.facebook.com/sharer/sharer.php?u=' +
-    amperoctoplus(encodeURI(e + '?img=' + img[0]))
+    amperoctoplus(encodeURI(e))
   );
 }
 function makeTw(e, t, r) {
