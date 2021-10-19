@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { makeFB, makeTw, openURLInPopup } from '../utils/helper';
 import Layout from '../components/Layout';
 
 const SharePage = ({ location: { search } }) => {
@@ -21,23 +20,13 @@ const SharePage = ({ location: { search } }) => {
           <span>Share</span>
           <button
             className="iconButton pointer"
-            onClick={() =>
-              openURLInPopup(makeFB('https://memes.reflexer.finance', 600, 400))
-            }
+            onClick={() => window['shareController'].socialLink('facebook')}
           >
             <img src="/images/facebook.svg" alt="" />
           </button>
           <button
             className="iconButton pointer"
-            onClick={() =>
-              openURLInPopup(
-                makeTw(
-                  'Enjoy RAI Memes World',
-                  'RAI_Memes_World',
-                  'https://memes.reflexer.finance'
-                )
-              )
-            }
+            onClick={() => window['shareController'].socialLink('twitter')}
           >
             <img src="/images/twitter.svg" alt="" />
           </button>
@@ -94,9 +83,7 @@ const SharePage = ({ location: { search } }) => {
                   <button
                     className="iconButton iconButton--solid pointer"
                     onClick={() =>
-                      openURLInPopup(
-                        makeFB('https://memes.reflexer.finance', 600, 400)
-                      )
+                      window['shareController'].socialLink('facebook')
                     }
                   >
                     <img src="/images/facebook.svg" alt="" />
@@ -104,13 +91,7 @@ const SharePage = ({ location: { search } }) => {
                   <button
                     className="iconButton iconButton--solid pointer"
                     onClick={() =>
-                      openURLInPopup(
-                        makeTw(
-                          'Enjoy RAI Memes World',
-                          'RAI_Memes_World',
-                          'https://memes.reflexer.finance'
-                        )
-                      )
+                      window['shareController'].socialLink('twitter')
                     }
                   >
                     <img src="/images/twitter.svg" alt="" />

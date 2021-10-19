@@ -131,9 +131,8 @@ const Layout = ({ children, search }) => {
         <meta property="og:image" content={imgUrl} />
         <meta property="og:image:secure_url" content={imgUrl} />
         <meta property="og:type" content="website" />
-
-        <meta property="twitter:card" content={imgUrl} />
-        <meta property="twitter:title" content="RAI Meme World" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@reflexerfinance" />
         <meta
           property="twitter:description"
           content="RAI memes with sharing as card option"
