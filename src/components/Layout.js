@@ -6,6 +6,10 @@ import { key, scramble, decodeValue } from '../utils/helper';
 const Layout = ({ children, search }) => {
   const edges = useMemes();
   const [state, setState] = React.useState({ hash: {}, dehash: {} });
+  const [ogImage, setogImage] = React.useState(
+    'images/favicon/apple-icon-144x144.png'
+  );
+
   const initHash = () => {
     let hash = {};
     let dehash = {};
@@ -35,15 +39,18 @@ const Layout = ({ children, search }) => {
       const u = search.split('?')[1].split('&')[0];
       const hashedImg = u.split('=')[1];
       const decodedImg = decodeValue(hashedImg, state.dehash);
-      return getImg(decodedImg)
-        ? 'https:' + getImg(decodedImg)[0] + '?w=200'
-        : 'images/favicon/apple-icon-144x144.png';
+      setogImage(
+        getImg(decodedImg)
+          ? 'https:' + getImg(decodedImg)[0] + '?w=200'
+          : 'images/favicon/apple-icon-144x144.png'
+      );
     }
-    return 'images/favicon/apple-icon-144x144.png';
+    setogImage('images/favicon/apple-icon-144x144.png');
   };
 
   React.useEffect(() => {
     initHash();
+    generateImgUrl();
   }, []);
 
   return (
@@ -124,8 +131,7 @@ const Layout = ({ children, search }) => {
         />
         <meta property="title" content="RAI Meme World" />
         <meta property="og:title" content="RAI Meme World" />
-        <meta property="og:image" content={generateImgUrl()} />
-        <meta property="og:image:width" content="200" />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:type" content="website" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
