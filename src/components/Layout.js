@@ -129,6 +129,7 @@ const Layout = ({ children, search }) => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="RAI Meme World" />
         <meta property="og:image" content={imgUrl} />
+        <meta property="og:image:url" content={imgUrl} />
         <meta property="og:image:secure_url" content={imgUrl} />
         <meta property="og:type" content="website" />
 
