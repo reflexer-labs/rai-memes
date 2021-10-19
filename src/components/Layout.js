@@ -1,17 +1,49 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import useMemes from '../hooks/useMemes';
+import { key, scramble, decodeValue } from '../utils/helper';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, search }) => {
   const edges = useMemes();
+  const [state, setState] = React.useState({ hash: {}, dehash: {} });
+  const initHash = () => {
+    let hash = {};
+    let dehash = {};
+    for (var e = 0; e < key.length; e++) {
+      hash[key[e]] = scramble[e];
+      dehash[scramble[e]] = key[e];
+    }
+    setState({ hash, dehash });
+  };
+
+  const memesArray = edges.map((e) => [
+    e.node.memeFile.file.url,
+    e.node.memeFile.file.fileName.toLowerCase().split('_').join(''),
+  ]);
+
   const returnData = () => {
-    const memes = edges.map((e) => [
-      e.node.memeFile.file.url,
-      e.node.memeFile.file.fileName.toLowerCase().split('_').join(''),
-    ]);
+    const memes = memesArray;
     return JSON.stringify(memes);
   };
 
+  const getImg = (decodedImg) => {
+    return memesArray.find((a) => a[1] === decodedImg);
+  };
+
+  const generateImgUrl = () => {
+    if (state.hash && state.dehash && search) {
+      const u = search.split('?')[1].split('&')[0];
+      const hashedImg = u.split('=')[1];
+      const decodedImg = decodeValue(hashedImg, state.dehash);
+      return getImg(decodedImg)
+        ? getImg(decodedImg)[0] + '?w=200'
+        : 'images/favicon/apple-icon-144x144.png';
+    }
+  };
+
+  React.useEffect(() => {
+    initHash();
+  }, []);
   return (
     <>
       <Helmet>
@@ -90,6 +122,7 @@ const Layout = ({ children }) => {
         />
         <meta property="title" content="RAI Meme World" />
         <meta property="og:title" content="RAI Meme World" />
+        <meta property="og:image" content={generateImgUrl()} />
         <meta property="og:type" content="website" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta

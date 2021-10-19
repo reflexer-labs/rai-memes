@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { makeFB, makeTw } from '../utils/helper';
+import { makeFB, makeTw, openURLInPopup } from '../utils/helper';
 import Layout from '../components/Layout';
 
-const sharePage = () => {
+const SharePage = ({ location: { search } }) => {
   return (
-    <Layout>
+    <Layout search={search}>
       <nav></nav>
       <div id="snow"></div>
       <div className="boiler">
@@ -22,28 +22,32 @@ const sharePage = () => {
           <button
             className="iconButton pointer"
             onClick={() =>
-              makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+              openURLInPopup(
+                makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+              )
             }
           >
-            <img src="images/facebook.svg" alt="" />
+            <img src="/images/facebook.svg" alt="" />
           </button>
           <button
             className="iconButton pointer"
             onClick={() =>
-              makeTw(
-                'Enjoy RAI Memes World',
-                'RAI Memes World',
-                'https://mstfash.github.io/rai-memes'
+              openURLInPopup(
+                makeTw(
+                  'Enjoy RAI Memes World',
+                  'RAI_Memes_World',
+                  'https://mstfash.github.io/rai-memes'
+                )
               )
             }
           >
-            <img src="images/twitter.svg" alt="" />
+            <img src="/images/twitter.svg" alt="" />
           </button>
         </div>
 
         <div className="boiler__options pointer">
           <span id="mute" className="boiler__mute">
-            <img src="images/music.svg" alt="" />
+            <img src="/images/music.svg" alt="" />
           </span>
         </div>
       </div>
@@ -92,22 +96,26 @@ const sharePage = () => {
                   <button
                     className="iconButton iconButton--solid pointer"
                     onClick={() =>
-                      makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+                      openURLInPopup(
+                        makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+                      )
                     }
                   >
-                    <img src="images/facebook.svg" alt="" />
+                    <img src="/images/facebook.svg" alt="" />
                   </button>
                   <button
                     className="iconButton iconButton--solid pointer"
                     onClick={() =>
-                      makeTw(
-                        'Enjoy RAI Memes World',
-                        'RAI Memes World',
-                        'https://mstfash.github.io/rai-memes'
+                      openURLInPopup(
+                        makeTw(
+                          'Enjoy RAI Memes World',
+                          'RAI_Memes_World',
+                          'https://mstfash.github.io/rai-memes'
+                        )
                       )
                     }
                   >
-                    <img src="images/twitter.svg" alt="" />
+                    <img src="/images/twitter.svg" alt="" />
                   </button>
                 </div>
               </div>
@@ -141,4 +149,4 @@ const sharePage = () => {
   );
 };
 
-export default sharePage;
+export default SharePage;

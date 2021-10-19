@@ -277,7 +277,7 @@ var browserController = {
   scramble = '5DphrLu1HVIW PoCcjX64ES9q8laQTyktJAnBRx2i7gUbvsOm3wZK0fzNeMYFdG',
   detailController = {
     state: {
-      shareUrl: '/share',
+      shareUrl: 'https://memes.reflexer.finance/share',
       baseUrl: '',
       hash: {},
       dehash: {},
@@ -414,7 +414,7 @@ var browserController = {
         case 'twitter':
           // event('share', 'twitter', 'click', !0),
           openURLInPopup(
-            (t = makeTw('Enjoy RAI Memes World!', 'RAI Memes World', e)),
+            (t = makeTw('Enjoy RAI Memes World!', 'RAI_Memes_World', e)),
             600,
             400
           );
@@ -1616,7 +1616,6 @@ var scrollAnimations = {
     },
     create: function (e) {
       var t = shareController.getUid(e);
-
       document
         .getElementById('share-image')
         .append(gridController.createImage(t[0])),

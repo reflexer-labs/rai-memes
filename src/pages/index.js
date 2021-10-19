@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
-import { makeFB, makeTw } from '../utils/helper';
+import { makeFB, makeTw, openURLInPopup } from '../utils/helper';
 
 const IndexPage = () => {
   return (
@@ -18,7 +18,9 @@ const IndexPage = () => {
           <button
             className="iconButton pointer"
             onClick={() =>
-              makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+              openURLInPopup(
+                makeFB('https://mstfash.github.io/rai-memes', 600, 400)
+              )
             }
           >
             <img alt="" src="images/facebook.svg" />
@@ -26,10 +28,12 @@ const IndexPage = () => {
           <button
             className="iconButton pointer"
             onClick={() =>
-              makeTw(
-                'Enjoy RAI Memes World',
-                'RAI Memes World',
-                'https://mstfash.github.io/rai-memes'
+              openURLInPopup(
+                makeTw(
+                  'Enjoy RAI Memes World',
+                  'RAI_Memes_World',
+                  'https://mstfash.github.io/rai-memes'
+                )
               )
             }
           >
