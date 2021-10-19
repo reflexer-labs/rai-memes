@@ -1,10 +1,11 @@
+<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://reflexer.finance" target="_blank">
+    <img alt="Reflexer" src="https://i.ibb.co/CtWRHQd/android-chrome-512x512.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  RAI Meme World
 </h1>
 
 ## 🚀 Quick start
