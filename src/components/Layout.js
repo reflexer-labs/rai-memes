@@ -43,7 +43,7 @@ const Layout = ({ children, search }) => {
       const decodedImg = decodeValue(hashedImg, dehash);
       console.log('decodedImg', decodedImg);
       return getImg(decodedImg)
-        ? 'https:' + getImg(decodedImg)[0] + '?w=200'
+        ? getImg(decodedImg)[0] + '?w=500'
         : `${BASE_URL}/images/logo-big.png`;
     }
     return `${BASE_URL}/images/logo-big.png`;
@@ -131,6 +131,7 @@ const Layout = ({ children, search }) => {
         <meta property="og:image" content={imgUrl} />
         <meta property="og:image:secure_url" content={imgUrl} />
         <meta property="og:type" content="website" />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@reflexerfinance" />
         <meta
