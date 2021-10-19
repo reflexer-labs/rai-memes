@@ -43,7 +43,7 @@ const Layout = ({ children, search }) => {
       const decodedImg = decodeValue(hashedImg, dehash);
       console.log('decodedImg', decodedImg);
       return getImg(decodedImg)
-        ? getImg(decodedImg)[0] + '?w=500'
+        ? 'http:' + getImg(decodedImg)[0] + '?w=500'
         : `${BASE_URL}/images/logo-big.png`;
     }
     return `${BASE_URL}/images/logo-big.png`;
