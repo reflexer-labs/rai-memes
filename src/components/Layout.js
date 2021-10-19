@@ -18,7 +18,7 @@ const Layout = ({ children, search }) => {
       hash[key[e]] = scramble[e];
       dehash[scramble[e]] = key[e];
     }
-    setState({ hash, dehash });
+    return { hash, dehash };
   };
 
   const memesArray = edges.map((e) => [
@@ -36,11 +36,9 @@ const Layout = ({ children, search }) => {
   };
 
   const generateImgUrl = () => {
+    console.log('search', search);
     if (search) {
-      console.log('search', search);
-      if (!state.hash || !state.dehash) {
-        initHash();
-      }
+      initHash();
       console.log('hash', state);
       const u = search.split('?')[1].split('&')[0];
       const hashedImg = u.split('=')[1];
