@@ -44,9 +44,9 @@ const Layout = ({ children, search }) => {
       console.log('decodedImg', decodedImg);
       return getImg(decodedImg)
         ? 'https:' + getImg(decodedImg)[0] + '?w=200'
-        : `${BASE_URL}/images/favicon/apple-icon-144x144.png`;
+        : `${BASE_URL}/images/logo-big.png`;
     }
-    return `${BASE_URL}/images/favicon/apple-icon-144x144.png`;
+    return `${BASE_URL}/images/logo-big.png`;
   }, [search, getImg]);
 
   return (
@@ -127,14 +127,12 @@ const Layout = ({ children, search }) => {
           content="RAI memes with sharing as card option"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={BASE_URL} />
         <meta property="og:title" content="RAI Meme World" />
         <meta property="og:image" content={imgUrl} />
         <meta property="og:image:secure_url" content={imgUrl} />
         <meta property="og:type" content="website" />
 
         <meta property="twitter:card" content={imgUrl} />
-        <meta property="twitter:url" content={BASE_URL} />
         <meta property="twitter:title" content="RAI Meme World" />
         <meta
           property="twitter:description"
