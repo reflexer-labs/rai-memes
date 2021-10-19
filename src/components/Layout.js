@@ -4,12 +4,9 @@ import useMemes from '../hooks/useMemes';
 import { key, scramble, decodeValue } from '../utils/helper';
 
 const BASE_URL = 'https://memes.reflexer.finance';
+
 const Layout = ({ children, search }) => {
   const edges = useMemes();
-  const [state, setState] = React.useState({ hash: {}, dehash: {} });
-  const [ogImage, setogImage] = React.useState(
-    `${BASE_URL}/images/favicon/apple-icon-144x144.png`
-  );
 
   const initHash = () => {
     let hash = {};
@@ -35,27 +32,21 @@ const Layout = ({ children, search }) => {
     return memesArray.find((a) => a[1] === decodedImg);
   };
 
-  const generateImgUrl = () => {
+  const imgUrl = useMemo(() => {
     console.log('search', search);
     if (search) {
-      initHash();
-      console.log('hash', state);
+      const { dehash } = initHash();
+      console.log('hash', dehash);
       const u = search.split('?')[1].split('&')[0];
       const hashedImg = u.split('=')[1];
-      const decodedImg = decodeValue(hashedImg, state.dehash);
+      const decodedImg = decodeValue(hashedImg, dehash);
       console.log('decodedImg', decodedImg);
-      setogImage(
-        getImg(decodedImg)
-          ? 'https:' + getImg(decodedImg)[0] + '?w=200'
-          : 'images/favicon/apple-icon-144x144.png'
-      );
+      return getImg(decodedImg)
+        ? 'https:' + getImg(decodedImg)[0] + '?w=200'
+        : `${BASE_URL}/images/favicon/apple-icon-144x144.png`;
     }
-    setogImage(`${BASE_URL}/images/favicon/apple-icon-144x144.png`);
-  };
-
-  React.useEffect(() => {
-    generateImgUrl();
-  }, []);
+    return `${BASE_URL}/images/favicon/apple-icon-144x144.png`;
+  }, [search]);
 
   return (
     <>
@@ -135,7 +126,7 @@ const Layout = ({ children, search }) => {
         />
         <meta property="title" content="RAI Meme World" />
         <meta property="og:title" content="RAI Meme World" />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={imgUrl} />
         <meta property="og:type" content="website" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
