@@ -30,6 +30,8 @@ const Layout = ({ children, image }) => {
       : `${BASE_URL}/images/logo-big.png`;
   }, [image, getImg]);
 
+  console.log('imgUrl', imgUrl);
+
   return (
     <>
       <Helmet>
