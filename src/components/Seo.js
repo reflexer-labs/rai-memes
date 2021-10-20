@@ -90,14 +90,6 @@ const SEO = ({ image: imgUrl }) => {
         property="og:image"
         content={imgUrl || BASE_URL + '/images/logo-big.png'}
       />
-      <meta
-        property="og:image:url"
-        content={imgUrl || BASE_URL + '/images/logo-big.png'}
-      />
-      <meta
-        property="og:image:secure_url"
-        content={imgUrl || BASE_URL + '/images/logo-big.png'}
-      />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
