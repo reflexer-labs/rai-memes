@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet';
 
 const BASE_URL = 'https://memes.reflexer.finance';
 
-const SEO = ({ imgUrl = BASE_URL + '/images/logo-big.png' }) => {
+const SEO = ({ image: imgUrl }) => {
+  console.log(imgUrl, 'imgUrl from seo');
   return (
     <Helmet>
       <link
@@ -75,16 +76,28 @@ const SEO = ({ imgUrl = BASE_URL + '/images/logo-big.png' }) => {
         sizes="16x16"
         href={`${BASE_URL}/images/favicon/favicon-16x16.png`}
       />
-      <link rel="image_src" href={imgUrl} />
+      <link
+        rel="image_src"
+        href={imgUrl || BASE_URL + '/images/logo-big.png'}
+      />
       <meta
         name="description"
         content="RAI memes with sharing as card option"
       />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="RAI Meme World" />
-      <meta property="og:image" content={imgUrl} />
-      <meta property="og:image:url" content={imgUrl} />
-      <meta property="og:image:secure_url" content={imgUrl} />
+      <meta
+        property="og:image"
+        content={imgUrl || BASE_URL + '/images/logo-big.png'}
+      />
+      <meta
+        property="og:image:url"
+        content={imgUrl || BASE_URL + '/images/logo-big.png'}
+      />
+      <meta
+        property="og:image:secure_url"
+        content={imgUrl || BASE_URL + '/images/logo-big.png'}
+      />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -93,7 +106,10 @@ const SEO = ({ imgUrl = BASE_URL + '/images/logo-big.png' }) => {
         property="twitter:description"
         content="RAI memes with sharing as card option"
       />
-      <meta property="twitter:image" content={imgUrl} />
+      <meta
+        property="twitter:image"
+        content={imgUrl || BASE_URL + '/images/logo-big.png'}
+      />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta
         name="msapplication-TileImage"
