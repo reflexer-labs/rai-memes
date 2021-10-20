@@ -1,24 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import useMemes from '../hooks/useMemes';
-import { key, scramble, decodeValue } from '../utils/helper';
 
 const BASE_URL = 'https://memes.reflexer.finance';
 
-const Layout = ({ children, search }) => {
+const Layout = ({ children, image }) => {
   const edges = useMemes();
-
-  const initHash = () => {
-    let hash = {};
-    let dehash = {};
-    for (var e = 0; e < key.length; e++) {
-      hash[key[e]] = scramble[e];
-      dehash[scramble[e]] = key[e];
-    }
-    return { hash, dehash };
-  };
-  console.log(initHash());
-
+  console.log(image);
   const memesArray = edges.map((e) => [
     e.node.memeFile.file.url,
     e.node.memeFile.file.fileName.toLowerCase().split('_').join(''),
@@ -29,25 +17,18 @@ const Layout = ({ children, search }) => {
     return JSON.stringify(memes);
   };
 
-  const getImg = (decodedImg) => {
-    return memesArray.find((a) => a[1] === decodedImg);
-  };
+  const getImg = React.useCallback(
+    (decodedImg) => {
+      return memesArray.find((a) => a[1] === decodedImg);
+    },
+    [memesArray]
+  );
 
   const imgUrl = React.useMemo(() => {
-    console.log('search', search);
-    if (search) {
-      const { dehash } = initHash();
-      console.log('hash', dehash);
-      const u = search.split('?')[1].split('&')[0];
-      const hashedImg = u.split('=')[1];
-      const decodedImg = decodeValue(hashedImg, dehash);
-      console.log('decodedImg', decodedImg);
-      return getImg(decodedImg)
-        ? 'http:' + getImg(decodedImg)[0] + '?w=500'
-        : `${BASE_URL}/images/logo-big.png`;
-    }
-    return `${BASE_URL}/images/logo-big.png`;
-  }, [search, getImg]);
+    return getImg(image)
+      ? 'https:' + getImg(image)[0] + '?w=500'
+      : `${BASE_URL}/images/logo-big.png`;
+  }, [image, getImg]);
 
   return (
     <>

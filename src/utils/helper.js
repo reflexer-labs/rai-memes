@@ -26,7 +26,18 @@ export const key =
 export const scramble =
   '5DphrLu1HVIW PoCcjX64ES9q8laQTyktJAnBRx2i7gUbvsOm3wZK0fzNeMYFdG';
 
-export const decodeValue = (e, dehash) => {
+export const initHash = () => {
+  let hash = {};
+  let dehash = {};
+  for (var e = 0; e < key.length; e++) {
+    hash[key[e]] = scramble[e];
+    dehash[scramble[e]] = key[e];
+  }
+  return { hash, dehash };
+};
+
+export const decodeValue = (e) => {
+  const { dehash } = initHash();
   let t = decodeURIComponent(e);
   t = t.split('_').join(' ');
   let r = '';
@@ -36,6 +47,17 @@ export const decodeValue = (e, dehash) => {
     r += o;
   }
   return r;
+};
+
+export const encodeValue = (e, hash) => {
+  let t = '';
+  for (let r = 0; r < e.length; r++) {
+    var n = hash[e[r]];
+    null == n && (n = e[r]);
+    t += n;
+  }
+  t = t.split(' ').join('_');
+  return (t = encodeURIComponent(t));
 };
 
 export function openURLInPopup(e, t = 800, r = 600, n) {
