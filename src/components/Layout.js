@@ -25,7 +25,7 @@ const Layout = ({ children, image }) => {
   );
 
   const imgUrl = React.useMemo(() => {
-    return getImg(image)
+    return image && getImg(image)
       ? 'https:' + getImg(image)[0] + '?w=500'
       : `${BASE_URL}/images/logo-big.png`;
   }, [image, getImg]);

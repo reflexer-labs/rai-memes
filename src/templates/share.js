@@ -4,6 +4,7 @@ import { decodeValue } from '../utils/helper';
 
 const SharePage = ({ location: { search } }) => {
   const decodeImg = React.useMemo(() => {
+    if (!search) return '';
     const u = search.split('?')[1].split('&')[0];
     const hashedImg = u.split('=')[1];
     const decodedImg = decodeValue(hashedImg);
