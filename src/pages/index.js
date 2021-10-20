@@ -1,10 +1,12 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 import { makeFB, makeTw, openURLInPopup } from '../utils/helper';
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Seo />
       <nav />
       <div id="snow"></div>
       <div className="boiler">

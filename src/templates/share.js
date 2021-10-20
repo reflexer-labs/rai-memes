@@ -1,17 +1,36 @@
 import * as React from 'react';
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
+import useMemes from '../hooks/useMemes';
 import { decodeValue } from '../utils/helper';
 
 const SharePage = ({ location: { search } }) => {
-  const decodeImg = React.useMemo(() => {
+  const edges = useMemes();
+
+  const memesArray = edges.map((e) => [
+    e.node.memeFile.file.url,
+    e.node.memeFile.file.fileName.toLowerCase().split('_').join(''),
+  ]);
+
+  const getImg = React.useCallback(
+    (decodedImg) => {
+      return memesArray.find((a) => a[1] === decodedImg);
+    },
+    [memesArray]
+  );
+  const imgUrl = React.useMemo(() => {
     if (!search) return '';
     const u = search.split('?')[1].split('&')[0];
     const hashedImg = u.split('=')[1];
     const decodedImg = decodeValue(hashedImg);
-    return decodedImg;
-  }, [search]);
+    return getImg(decodedImg) && 'https:' + getImg(decodedImg)[0] + '?w=500';
+  }, [search, getImg]);
+
+  console.log('imgUrl inner seo', imgUrl);
+
   return (
-    <Layout image={decodeImg}>
+    <Layout>
+      <Seo image={imgUrl} />
       <nav></nav>
       <div id="snow"></div>
       <div className="boiler">
