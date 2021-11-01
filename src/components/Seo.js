@@ -12,20 +12,25 @@ const SEO = ({ image: imgUrl }) => {
         type="image/ico"
         href={`${BASE_URL}/images/icon.png`}
       />
-      <link
-        rel="image_src"
-        href={imgUrl || BASE_URL + '/images/logo-big.png'}
-      />
+      {imgUrl ? (
+        <link
+          rel="image_src"
+          href={imgUrl || BASE_URL + '/images/logo-big.png'}
+        />
+      ) : null}
+
       <meta
         name="description"
         content="RAI memes with sharing as card option"
       />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="RAI Meme World" />
-      <meta
-        property="og:image"
-        content={imgUrl || BASE_URL + '/images/logo-big.png'}
-      />
+      {imgUrl ? (
+        <meta
+          property="og:image"
+          content={imgUrl || BASE_URL + '/images/logo-big.png'}
+        />
+      ) : null}
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -34,10 +39,13 @@ const SEO = ({ image: imgUrl }) => {
         property="twitter:description"
         content="RAI memes with sharing as card option"
       />
-      <meta
-        property="twitter:image"
-        content={imgUrl || BASE_URL + '/images/logo-big.png'}
-      />
+      {imgUrl ? (
+        <meta
+          property="twitter:image"
+          content={imgUrl || BASE_URL + '/images/logo-big.png'}
+        />
+      ) : null}
+
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta
         name="msapplication-TileImage"
