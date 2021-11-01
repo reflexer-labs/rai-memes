@@ -6,11 +6,11 @@ const BASE_URL = 'https://memes.reflexer.finance';
 const SEO = ({ image: imgUrl }) => {
   return (
     <Helmet>
-      <link rel="icon" href={`${BASE_URL}/images/icon.png`} />
+      <link rel="icon" href={`${BASE_URL}/images/icon.png?v=2`} />
       <link
         rel="shortcut icon"
         type="image/ico"
-        href={`${BASE_URL}/images/icon.png`}
+        href={`${BASE_URL}/images/icon.png?v=2`}
       />
       {imgUrl ? (
         <link
