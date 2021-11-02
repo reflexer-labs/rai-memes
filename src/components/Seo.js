@@ -12,6 +12,7 @@ const SEO = ({ image: imgUrl }) => {
         type="image/ico"
         href={`${BASE_URL}/images/icon.png?v=2`}
       />
+      <title>RAI Memes World</title>
       {imgUrl ? (
         <link
           rel="image_src"
@@ -24,7 +25,7 @@ const SEO = ({ image: imgUrl }) => {
         content="RAI memes with sharing as card option"
       />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="RAI Meme World" />
+      <meta property="og:title" content="RAI Memes World" />
       {imgUrl ? (
         <meta
           property="og:image"
